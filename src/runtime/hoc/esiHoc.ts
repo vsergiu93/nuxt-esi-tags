@@ -1,7 +1,7 @@
-import {type ComponentOptions, h} from 'vue';
+import {type ComponentOptions, type Component, type ExtractPropTypes, h} from 'vue';
 import {withQuery} from "ufo";
 
-export function esiHoc<T>(WrappedComponent: T, extraHeaders: Record<string, string> = {}): ComponentOptions {
+export function esiHoc<T extends Component>(WrappedComponent: T, extraHeaders: Record<string, string> = {}): ComponentOptions<ExtractPropTypes<T>> {
   const extraH = {
     'Cache-Control': 'max-age=120',
     ...extraHeaders
@@ -10,7 +10,6 @@ export function esiHoc<T>(WrappedComponent: T, extraHeaders: Record<string, stri
     name: 'EsiHocComponent',
     inheritAttrs: false,
     render() {
-      // @ts-ignore
       const componentName = WrappedComponent?.name;
 
       const url = withQuery(`/__nuxt_esi_tag_renderer/${componentName}`, {
