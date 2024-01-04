@@ -1,7 +1,7 @@
 import {type ComponentOptions, h} from 'vue';
 import {withQuery} from "ufo";
 
-export function esiHocComponent<T>(WrappedComponent: T, extraHeaders: Record<string, string> = {}): ComponentOptions {
+export function esiHoc<T>(WrappedComponent: T, extraHeaders: Record<string, string> = {}): ComponentOptions {
   const extraH = {
     'Cache-Control': 'max-age=120',
     ...extraHeaders

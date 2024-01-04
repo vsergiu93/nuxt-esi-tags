@@ -8,7 +8,7 @@ import {ExampleComponent} from "#components";
 
 export default defineComponent({
   components: {
-    ExampleComponentEsi: esiHocComponent(ExampleComponent)
+    ExampleComponentEsi: esiHoc(ExampleComponent)
   }
 })
 </script>
