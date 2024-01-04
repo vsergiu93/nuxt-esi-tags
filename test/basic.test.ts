@@ -7,9 +7,15 @@ describe('ssr', async () => {
     rootDir: fileURLToPath(new URL('./fixtures/basic', import.meta.url)),
   })
 
-  it('renders the index page', async () => {
-    // Get response to a server-rendered page with `$fetch`.
-    const html = await $fetch('/')
-    expect(html).toContain('<div>basic</div>')
+  it('enables component islands feature', async () => {
+    const json = await $fetch('/__nuxt_island/DummyComponent')
+
+    expect(json).toHaveProperty('html')
+  })
+
+  it('adds custom route which handles the rendering of a esi tag', async () => {
+    const html = await $fetch('/__nuxt_esi_tag_renderer/DummyComponent')
+
+    expect(html).toContain('Test')
   })
 })
