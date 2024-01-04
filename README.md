@@ -1,6 +1,6 @@
 # Nuxt Esi Tags
 
-The module is in early development
+This is work in progress
 
 
 ## Development
