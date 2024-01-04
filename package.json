@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
+  "name": "nuxt-esi-tags",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "description": "Nuxt Esi Tags",
+  "repository": "vsergiu93/nuxt-esi-tags",
   "license": "MIT",
   "type": "module",
   "exports": {
