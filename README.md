@@ -1,6 +1,12 @@
-# Nuxt Esi Tags
+# Nuxt ESI Tags Module
 
-This is work in progress
+The nuxt-esi-tags module is specifically designed to bring enhanced server-side rendering capabilities to your 
+Nuxt.js applications through the integration of Edge Side Includes (ESI). 
+This is achieved by leveraging the Nuxt.js [Island Components](https://nuxt.com/docs/guide/directory-structure/components#server-components) 
+functionality to provide efficient, granular component rendering and caching, enhancing the robustness of large-scale 
+applications containing reusable components.
+
+### Under active development
 
 
 ## Development
