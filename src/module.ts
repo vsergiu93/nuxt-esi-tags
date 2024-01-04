@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver,addServerHandler, addComponentsDir, addImports } from '@nuxt/kit'
+import { defineNuxtModule, createResolver,addServerHandler, addImports } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
