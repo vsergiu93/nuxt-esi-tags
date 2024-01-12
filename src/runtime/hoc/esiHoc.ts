@@ -1,25 +1,33 @@
-import {type ComponentOptions, type Component, type ExtractPropTypes, h} from 'vue';
+import {defineComponent, h} from 'vue';
 import {withQuery} from "ufo";
+import type {DefineComponent, Component} from "vue";
 
-export function esiHoc<T extends Component>(WrappedComponent: T, extraHeaders: Record<string, string> = {}): ComponentOptions<ExtractPropTypes<T>> {
+export function esiHoc<T extends Component>(WrappedComponent: T, extraHeaders: Record<string, string> = {}): DefineComponent {
   const extraH = {
     'Cache-Control': 'max-age=120',
     ...extraHeaders
   }
-  return {
+
+  return defineComponent({
     name: 'EsiHocComponent',
     inheritAttrs: false,
-    render() {
-      const componentName = WrappedComponent?.name;
+    setup(props, {attrs}) {
+      return () => {
+        const componentName = WrappedComponent.name;
 
-      const url = withQuery(`/__nuxt_esi_tag_renderer/${componentName}`, {
-        props: JSON.stringify(Object.fromEntries(Object.entries(this.$attrs).filter(([_, v]) =>  v != null && v !== undefined && v !==''))),
-        extraHeaders: JSON.stringify(Object.fromEntries(Object.entries(extraH).filter(([_, v]) =>  v != null && v !== undefined && v !==''))),
-      });
+        function filterFunction<T extends [string, unknown]>(pair: T) : boolean {
+          return Boolean(pair[1]) && pair[1] !== ''
+        }
 
-      return h('esi:include', {
-        src: url
-      })
-    }
-  }
+        const url = withQuery(`/__nuxt_esi_tag_renderer/${componentName}`, {
+          props: JSON.stringify(Object.fromEntries(Object.entries(attrs).filter(filterFunction))),
+          extraHeaders: JSON.stringify(Object.fromEntries(Object.entries(extraH).filter(filterFunction))),
+        });
+
+        return h('esi:include', {
+          src: url
+        })
+      }
+    },
+  })
 }
