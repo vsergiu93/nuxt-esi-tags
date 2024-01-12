@@ -18,4 +18,10 @@ describe('ssr', async () => {
 
     expect(html).toContain('Test')
   })
+
+  it('renders the actual esi tag', async () => {
+    // Get response to a server-rendered page with `$fetch`.
+    const html = await $fetch('/')
+    expect(html).toContain('<esi:include')
+  })
 })
