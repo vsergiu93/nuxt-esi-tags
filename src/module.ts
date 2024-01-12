@@ -8,7 +8,10 @@ export interface ModuleOptions {}
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-esi-tags',
-    configKey: 'nuxtEsiTags'
+    configKey: 'nuxtEsiTags',
+    compatibility: {
+      nuxt: '^3.0.0'
+    }
   },
   // Default configuration options of the Nuxt module
   defaults: {},
