@@ -34,6 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --force
 
+      - name: Prepare
+        run: npm run dev:prepare
+        
       - name: Run tests
         run: npm run test
 
