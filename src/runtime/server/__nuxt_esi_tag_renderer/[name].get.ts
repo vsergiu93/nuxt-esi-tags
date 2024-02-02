@@ -1,4 +1,5 @@
-import {getQuery, getRouterParam, setHeaders, defineEventHandler} from "h3";
+import { getQuery, getRouterParam, setHeaders, defineEventHandler } from "h3";
+
 export default defineEventHandler<{
   query: {
     extraHeaders?: string
@@ -8,13 +9,13 @@ export default defineEventHandler<{
   const name = getRouterParam(event, 'name');
   const query = getQuery(event);
 
-  if(query.extraHeaders) {
+  if (query.extraHeaders) {
     const extraHeaders = JSON.parse(query.extraHeaders)
     setHeaders(event, extraHeaders);
   }
 
 
-  const response = await $fetch<{html: string}>(`/__nuxt_island/${name}`, {
+  const response = await $fetch<{ html: string }>(`/__nuxt_island/${name}`, {
     query,
     // Set the headers returned by nuxt island route, maybe some custom headers where set inside the component.
     onResponse(context): Promise<void> | void {
