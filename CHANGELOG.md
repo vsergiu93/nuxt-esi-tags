@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.7
+
+[compare changes](https://github.com/vsergiu93/nuxt-esi-tags/compare/v1.0.6...v1.0.7)
+
+### 💅 Refactors
+
+- Address hydration mismatch errors ([4469870](https://github.com/vsergiu93/nuxt-esi-tags/commit/4469870))
+
+### ❤️ Contributors
+
+- Sergiu Daniel Vidican ([@vsergiu93](http://github.com/vsergiu93))
+
 ## v1.0.6
 
 [compare changes](https://github.com/vsergiu93/nuxt-esi-tags/compare/v1.0.5...v1.0.6)
