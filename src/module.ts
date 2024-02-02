@@ -10,7 +10,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-esi-tags',
     configKey: 'nuxtEsiTags',
     compatibility: {
-      nuxt: '^3.0.0'
+      nuxt: '^3.10.0'
     }
   },
   // Default configuration options of the Nuxt module
@@ -24,13 +24,13 @@ export default defineNuxtModule<ModuleOptions>({
 
     addServerHandler({
       route: '/__nuxt_esi_tag_renderer/:name',
-      handler: resolver.resolve('./runtime/server/__nuxt_esi_tag_renderer/[name].get.ts')
+      handler: resolver.resolve('./runtime/server/__nuxt_esi_tag_renderer/[name].get')
     })
 
     addImports({
       name: 'esiHoc',
       as: 'esiHoc',
-      from: resolver.resolve('./runtime/hoc/esiHoc.ts')
+      from: resolver.resolve('./runtime/hoc/esiHoc')
     })
   }
 })
