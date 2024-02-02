@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.5
+
+[compare changes](https://github.com/vsergiu93/nuxt-esi-tags/compare/v1.0.4...v1.0.5)
+
+### 💅 Refactors
+
+- Remove explicit extension when adding the server handler and the hoc function ([844dbfd](https://github.com/vsergiu93/nuxt-esi-tags/commit/844dbfd))
+
+### ❤️ Contributors
+
+- Sergiu Daniel Vidican ([@vsergiu93](http://github.com/vsergiu93))
+
 ## v1.0.4
 
 [compare changes](https://github.com/vsergiu93/nuxt-esi-tags/compare/v1.0.3...v1.0.4)
