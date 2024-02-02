@@ -29,6 +29,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addImports({
       name: 'esiHoc',
+      as: 'esiHoc',
       from: resolver.resolve('./runtime/hoc/esiHoc.ts')
     })
   }
