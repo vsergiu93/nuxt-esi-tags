@@ -1,5 +1,4 @@
-import {defineComponent, h} from 'vue';
-import {withQuery} from "ufo";
+import {defineComponent, h, resolveComponent} from 'vue';
 import type {DefineComponent, Component} from "vue";
 
 export function esiHoc<T extends Component>(WrappedComponent: T, extraHeaders: Record<string, string> = {}): DefineComponent {
@@ -15,17 +14,12 @@ export function esiHoc<T extends Component>(WrappedComponent: T, extraHeaders: R
       return () => {
         const componentName = WrappedComponent.name;
 
-        function filterFunction<T extends [string, unknown]>(pair: T) : boolean {
-          return Boolean(pair[1]) && pair[1] !== ''
-        }
+        const esiIncludeComponent = resolveComponent('EsiInclude');
 
-        const url = withQuery(`/__nuxt_esi_tag_renderer/${componentName}`, {
-          props: JSON.stringify(Object.fromEntries(Object.entries(attrs).filter(filterFunction))),
-          extraHeaders: JSON.stringify(Object.fromEntries(Object.entries(extraH).filter(filterFunction))),
-        });
-
-        return h('esi:include', {
-          src: url
+        return h(esiIncludeComponent, {
+          componentName: componentName,
+          extraHeaders: extraH,
+          ...attrs
         })
       }
     },

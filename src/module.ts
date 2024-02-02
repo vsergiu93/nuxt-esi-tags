@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver,addServerHandler, addImports } from '@nuxt/kit'
+import { defineNuxtModule, createResolver,addServerHandler, addImports, addComponent } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
@@ -15,7 +15,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  setup (options, nuxt) {
+  async setup (options, nuxt) {
     // Enable component islands, as this module makes use of components islands internal logic.
     nuxt.options.experimental ||= {} as typeof nuxt.options.experimental
     nuxt.options.experimental.componentIslands = true
@@ -31,6 +31,13 @@ export default defineNuxtModule<ModuleOptions>({
       name: 'esiHoc',
       as: 'esiHoc',
       from: resolver.resolve('./runtime/hoc/esiHoc')
+    })
+
+    await addComponent({
+      filePath: resolver.resolve('./runtime/components/EsiInclude.server'),
+      name:'EsiInclude',
+      mode: "server",
+      global: true,
     })
   }
 })
