@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.6
+
+[compare changes](https://github.com/vsergiu93/nuxt-esi-tags/compare/v1.0.5...v1.0.6)
+
+### 💅 Refactors
+
+- Add import for defineEventHandler ([814db52](https://github.com/vsergiu93/nuxt-esi-tags/commit/814db52))
+
+### ❤️ Contributors
+
+- Sergiu Daniel Vidican ([@vsergiu93](http://github.com/vsergiu93))
+
 ## v1.0.5
 
 [compare changes](https://github.com/vsergiu93/nuxt-esi-tags/compare/v1.0.4...v1.0.5)
