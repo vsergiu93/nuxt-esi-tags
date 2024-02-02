@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 import DummyComponent from "../components/DummyComponent.server.vue";
 
 export default defineComponent({

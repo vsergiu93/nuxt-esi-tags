@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import {ExampleComponent} from "#components";
+import { ExampleComponent } from "#components";
 
 export default defineComponent({
   components: {
