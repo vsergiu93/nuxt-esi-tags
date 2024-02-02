@@ -1,4 +1,4 @@
-import {getQuery, getRouterParam, setHeaders} from "h3";
+import {getQuery, getRouterParam, setHeaders, defineEventHandler} from "h3";
 export default defineEventHandler<{
   query: {
     extraHeaders?: string
