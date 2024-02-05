@@ -1,4 +1,12 @@
 {
   "root": true,
-  "extends": ["@nuxt/eslint-config"]
+  "extends": [
+    "@nuxt/eslint-config"
+  ],
+  "rules": {
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ]
+  }
 }

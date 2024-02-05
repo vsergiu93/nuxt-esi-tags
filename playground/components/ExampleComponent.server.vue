@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import {setHeaders} from "h3";
+import { setHeaders } from "h3";
 
 defineOptions({
   name: 'ExampleComponentEsi'
