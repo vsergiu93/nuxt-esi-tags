@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.0.8
+
+[compare changes](https://github.com/vsergiu93/nuxt-esi-tags/compare/v1.0.7...v1.0.8)
+
+### 💅 Refactors
+
+- Refactor the `esiHoc` function in `esiHoc.ts` ([81522c6](https://github.com/vsergiu93/nuxt-esi-tags/commit/81522c6))
+
+### 🎨 Styles
+
+- Apply style adjustments to import statements ([cc2f18c](https://github.com/vsergiu93/nuxt-esi-tags/commit/cc2f18c))
+- Improve code readability in nuxt esi tag renderer ([bdf730a](https://github.com/vsergiu93/nuxt-esi-tags/commit/bdf730a))
+
+### ❤️ Contributors
+
+- Sergiu Daniel Vidican ([@vsergiu93](http://github.com/vsergiu93))
+
 ## v1.0.7
 
 [compare changes](https://github.com/vsergiu93/nuxt-esi-tags/compare/v1.0.6...v1.0.7)
