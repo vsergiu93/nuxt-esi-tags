@@ -7,7 +7,6 @@ interface ExtraHeaders {
 
 export function esiHoc<T extends Component>(WrappedComponent: T, extraHeaders: ExtraHeaders = {}): DefineComponent {
   const extraH: ExtraHeaders = {
-    'Cache-Control': 'max-age=120',
     ...extraHeaders
   }
 
