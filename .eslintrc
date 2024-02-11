@@ -8,5 +8,18 @@
       "error",
       "always"
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.vue"
+      ],
+      "rules": {
+        "object-curly-spacing": [
+          "error",
+          "always"
+        ]
+      }
+    }
+  ]
 }
