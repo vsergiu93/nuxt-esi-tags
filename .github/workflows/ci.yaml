@@ -19,11 +19,15 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm ci --force
+
+      - name: Archive dependency cache
+        run: tar -czf node_modules.tar.gz node_modules
+
       - name: Archive dependency cache
         uses: actions/upload-artifact@v2
         with:
           name: node_modules
-          path: node_modules
+          path: ./node_modules.tar.gz
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -39,7 +43,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node_modules
-          path: node_modules
+      - name: Extract dependencies
+        run: tar -xzf node_modules.tar.gz
 
       - run: npm run lint
 
@@ -57,7 +62,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node_modules
-          path: node_modules
+
+
+      - name: Extract dependencies
+        run: tar -xzf node_modules.tar.gz
 
       - name: Prepare
         run: npm run dev:prepare
